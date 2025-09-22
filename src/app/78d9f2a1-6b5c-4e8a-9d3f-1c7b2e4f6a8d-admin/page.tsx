@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { HiOutlineHome, HiOutlineMap, HiOutlineClock, HiOutlineUsers } from 'react-icons/hi';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ASSET_PATHS } from '@/lib/assets';
 
 export default function AdminPage() {
   const investment = {
@@ -11,7 +12,7 @@ export default function AdminPage() {
     name: 'Zamoyskiego 2',
     address: 'Stalowa Wola - lokalizacja do ustalenia',
     description: 'Domy w zabudowie bliźniaczej',
-    image: '/assets/photos/Image24.png',
+    image: ASSET_PATHS.photos.image24,
     route: '/78d9f2a1-6b5c-4e8a-9d3f-1c7b2e4f6a8d-admin/zamoyskiego-2',
     icon: HiOutlineHome,
     color: 'from-[#d7c28d] to-[#c4a76a]',

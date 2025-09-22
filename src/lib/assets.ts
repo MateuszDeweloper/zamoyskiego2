@@ -6,9 +6,10 @@ export const getAssetUrl = (path: string): string => {
   // Usuń "assets/" z początku ścieżki jeśli istnieje
   const relativePath = cleanPath.startsWith('assets/') ? cleanPath.slice(7) : cleanPath;
   
-  // Zwróć pełny URL z bucketa R2 - używaj zmiennej środowiskowej
+  // Zwróć pełny URL z bucketa R2 - używaj zmiennej środowiskowej lub fallback
   // Pliki są w buckecie pod assets/assets/ przez co upload się odbył
-  return `${process.env.NEXT_PUBLIC_R2_PUBLIC_URL}/assets/assets/${relativePath}`;
+  const baseUrl = process.env.NEXT_PUBLIC_R2_PUBLIC_URL || 'https://pub-87b84208ccf34255b805f85fec3df301.r2.dev';
+  return `${baseUrl}/assets/assets/${relativePath}`;
 };
 
 // Mapowanie starych ścieżek na nowe
@@ -43,6 +44,11 @@ export const ASSET_PATHS = {
     image23_000: getAssetUrl('photos/Image23_000.png'),
     image24: getAssetUrl('photos/Image24.png'),
     image24_000: getAssetUrl('photos/Image24_000.png'),
+  },
+  
+  // Osiedle Osowiec
+  osiedleOsowiec: {
+    wizualizacja1: getAssetUrl('osiedle-osowiec/wizualizacje/1.jpg'),
   },
   
   // Prospekt

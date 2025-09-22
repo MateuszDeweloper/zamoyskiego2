@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { HiOutlineHome, HiOutlineMap, HiOutlineClock, HiOutlineUsers } from 'react-icons/hi';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ASSET_PATHS } from '@/lib/assets';
 
 export default function AdminPage() {
   const investment = {
@@ -11,7 +12,7 @@ export default function AdminPage() {
     name: 'Osiedle Osowiec',
     address: '93-321 Osowiec, ul. Lipowa 10',
     description: 'Domki jednorodzinne dwulokalowe',
-    image: '/assets/osiedle-osowiec/wizualizacje/1.jpg',
+    image: ASSET_PATHS.osiedleOsowiec.wizualizacja1,
     route: '/admin/osiedle-osowiec',
     icon: HiOutlineHome,
     color: 'from-[#d7c28d] to-[#c4a76a]',

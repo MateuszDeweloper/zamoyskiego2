@@ -4,6 +4,7 @@ import React, { useState, FormEvent, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { ASSET_PATHS } from '@/lib/assets';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -85,7 +86,7 @@ export default function Login() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#d7c28d]/20 to-[#c4a76a]/10"></div>
           <Image
-            src="/assets/photos/Image24.png"
+            src={ASSET_PATHS.photos.image24}
             alt="Tło logowania - Zamoyskiego 2"
             fill
             sizes="100vw"
@@ -99,7 +100,7 @@ export default function Login() {
           <div className="bg-white bg-opacity-95 backdrop-blur-sm shadow-2xl rounded-2xl px-8 py-12">
             <div className="flex flex-col items-center mb-8">
               <Image
-                src="/assets/logo-nobg.png"
+                src={ASSET_PATHS.logoStandard}
                 alt="ASCANA Logo"
                 width={220}
                 height={70}

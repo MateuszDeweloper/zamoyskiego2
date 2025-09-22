@@ -1,4 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zamoyskiego 2 - Panel Administracyjny
+
+Aplikacja Next.js do zarządzania inwestycją mieszkaniową "Zamoyskiego 2" w Stalowej Woli.
+
+## Wymagane zmienne środowiskowe
+
+Aby aplikacja działała poprawnie, musisz skonfigurować następujące zmienne środowiskowe:
+
+### W Vercel (Environment Variables):
+```
+NEXT_PUBLIC_R2_PUBLIC_URL=https://pub-87b84208ccf34255b805f85fec3df301.r2.dev
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+R2_ACCOUNT_ID=your_r2_account_id
+R2_ACCESS_KEY_ID=your_r2_access_key_id
+R2_SECRET_ACCESS_KEY=your_r2_secret_access_key
+R2_BUCKET_NAME=your_r2_bucket_name
+```
+
+### Lokalnie (.env.local):
+```bash
+NEXT_PUBLIC_R2_PUBLIC_URL=https://pub-87b84208ccf34255b805f85fec3df301.r2.dev
+MONGODB_URI=mongodb://localhost:27017/zamoyskiego2
+JWT_SECRET=your_local_jwt_secret
+R2_ACCOUNT_ID=your_r2_account_id
+R2_ACCESS_KEY_ID=your_r2_access_key_id
+R2_SECRET_ACCESS_KEY=your_r2_secret_access_key
+R2_BUCKET_NAME=your_r2_bucket_name
+```
 
 ## Getting Started
 
