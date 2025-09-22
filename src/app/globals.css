@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #c5ab75;
+  --primary-dark: #b39a65;
+  --primary-light: #d2b978;
+  --secondary: #333333;
+  --secondary-dark: #222222;
+  --secondary-light: #444444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Zmieniono domyślne kolory na jasne */
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-[#c5ab75] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#b39a65] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[#c5ab75] text-[#c5ab75] px-6 py-3 rounded-lg font-medium hover:bg-[#c5ab75] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-10 relative inline-block tracking-wide;
+  }
+  
+  .section-heading::after {
+    content: '';
+    @apply absolute bottom-[-10px] left-0 w-1/2 h-1 bg-[#c5ab75];
+  }
+  
+  .section-subheading {
+    @apply text-xl md:text-2xl font-semibold mb-6 text-[#c5ab75] tracking-wide;
+  }
+}
+
+/* Animacje */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
